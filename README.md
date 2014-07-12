@@ -16,4 +16,4 @@ With the virtualenv do this:
 
 In another terminal:
 
-    $ curl localhost:4000
+    $ curl localhost:5000

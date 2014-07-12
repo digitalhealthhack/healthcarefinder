@@ -11,7 +11,7 @@ API = Api(APP)
 
 class HealthCenters(Resource):
     def get(self, latitude, longitude):
-        with open('merged.json') as json_file:
+        with open('data.json') as json_file:
             health_centers = []
             data = json.loads(json_file.read())
             for datum in data:

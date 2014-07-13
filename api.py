@@ -1,11 +1,17 @@
 import json
 import random
-from flask import Flask, Response
+
+from flask import Flask
+from flask import Response
+from flask import render_template
 from flask.ext.restful import Api
 from flask.ext.restful import Resource
 
+
 APP = Flask(__name__)
+
 API = Api(APP)
+
 
 class HealthCenters(Resource):
     def get(self, latitude, longitude):
@@ -19,12 +25,15 @@ class HealthCenters(Resource):
                     'long': datum['lng'],
                     'address': datum['address'],
                     'estimated': random.randint(90, 900)
-                    
                 })
 
         return Response(json.dumps(health_centers),  mimetype='application/javascript')
 
 API.add_resource(HealthCenters, '/<string:latitude>/<string:longitude>')
+
+@APP.route("/")
+def map():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     APP.run(debug=True)

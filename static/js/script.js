@@ -5,7 +5,7 @@ $(document).ready(function () {
         dataType: 'json',
         contentType: "application/javascript",
         async: false,
-        url: "http://localhost:5000/1/1",
+        url: "http://localhost:5000/1",
         error: function (request, textStatus, errorThrown) {
             console.log(errorThrown);
         },

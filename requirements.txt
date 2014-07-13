@@ -8,5 +8,6 @@ itsdangerous==0.24
 mongo==0.2.0
 pymongo==2.7.1
 pytz==2014.4
+requests==2.3.0
 six==1.7.3
 wsgiref==0.1.2
